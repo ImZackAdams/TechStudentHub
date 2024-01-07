@@ -1,6 +1,6 @@
 // Import the useState hook from React to manage form state
 import { useState } from 'react';
-import styles from './page.module.css'; // Your styles
+import styles from './src/app/page.module.css'; // Your styles
 
 export default function SignUp() {
   // State to store the input from the user
