@@ -1,66 +1,64 @@
+/* page.module.css */
+
 .container {
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Make the container fill the viewport height */
+  background: #f0f4f8; /* Example background color */
 }
 
 .header {
-  margin-bottom: 2rem;
+  text-align: center;
+  margin-bottom: 2rem; /* Adjust as needed */
 }
 
 .logo {
-  max-width: 150px;
-  margin-bottom: 1rem;
+  /* Style as needed */
 }
 
 .title {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 0.5rem;
+  font-size: 2rem; /* Example size, adjust as needed */
+  margin-bottom: 0.5rem; /* Adjust as needed */
 }
 
 .subtitle {
-  font-size: 1.25rem;
-  color: #666;
-  margin-bottom: 2rem;
+  font-size: 1rem; /* Example size, adjust as needed */
+  margin-bottom: 2rem; /* Adjust as needed */
 }
 
 .form {
+  width: 100%; /* Use full width of the container */
+  max-width: 500px; /* Maximum size of the form */
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  align-items: center; /* Center children horizontally */
 }
 
 .input {
-  font-size: 1rem;
-  padding: 0.75rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin-bottom: 1rem;
+  width: 100%; /* Full width within the form */
+  padding: 1rem;
+  margin-bottom: 1rem; /* Space between the input and the button */
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .button {
-  font-size: 1rem;
-  padding: 0.75rem;
-  background-color: #0056b3;
+  width: 100%; /* Full width within the form */
+  padding: 1rem;
+  background: #0056b3;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.button:hover {
-  background-color: #003d82;
 }
 
 .footer {
-  margin-top: 3rem;
-  padding-top: 1rem;
-  border-top: 1px solid #eee;
-  color: #666;
+  text-align: center;
+  margin-top: 2rem; /* Adjust as needed */
 }
