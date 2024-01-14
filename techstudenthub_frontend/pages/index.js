@@ -12,15 +12,13 @@ export default function SignUp() {
 
     // Here, add the API call to the backend endpoint responsible for handling waitlist sign-ups
     try {
-  // React component fetch call
-const response = await fetch('http://127.0.0.1:8000/api/users/waitlist/', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({ email: email }),
-});
-
+      const response = await fetch('http://127.0.0.1:8000/api/users/waitlist/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: email }),
+      });
 
       if (response.ok) {
         const data = await response.json();
@@ -39,20 +37,31 @@ const response = await fetch('http://127.0.0.1:8000/api/users/waitlist/', {
 
   // The JSX for the form, using styles from your CSS module
   return (
-    <main className={styles.main}>
-      <h1 className={styles.title}>Join Our Waitlist</h1>
-      <p className={styles.description}>Sign up to be the first to know when we launch.</p>
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <input
-          type="email"
-          placeholder="Enter your email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className={styles.input}
-          required
-        />
-        <button type="submit" className={styles.button}>Join Waitlist</button>
-      </form>
-    </main>
+    <div className={styles.container}>
+      <header className={styles.header}>
+        {/* Replace with your actual image or graphic */}
+        <img src="/tech-student-hub-logo.svg" alt="Tech Student Hub Logo" className={styles.logo} />
+        <h1 className={styles.title}>Join the Tech Student Hub Waitlist</h1>
+        <p className={styles.subtitle}>
+          Connect with peers, discover resources, and take your tech education to the next level.
+        </p>
+      </header>
+      <main className={styles.main}>
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <input
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className={styles.input}
+            required
+          />
+          <button type="submit" className={styles.button}>Join Waitlist</button>
+        </form>
+      </main>
+      <footer className={styles.footer}>
+        <p>&copy; {new Date().getFullYear()} Tech Student Hub. All rights reserved.</p>
+      </footer>
+    </div>
   );
 }
