@@ -42,7 +42,7 @@ export default function SignUp() {
         />
         <h1 className={styles.title}>Join the Tech Student Hub Waitlist</h1>
         <p className={styles.subtitle}>
-          Connect with peers, discover resources, and take your tech education to the next level.
+          Connect with peers, discover resources, and take your university career to the next level.
         </p>
       </header>
 
