@@ -1,39 +1,64 @@
-.main {
+/* page.module.css */
+
+.container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  padding: 2rem;
+  align-items: center;
+  min-height: 100vh; /* Make the container fill the viewport height */
+  background: #f0f4f8; /* Example background color */
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem; /* Adjust as needed */
+}
+
+.logo {
+  /* Style as needed */
 }
 
 .title {
-  margin-bottom: 1rem;
+  font-size: 2rem; /* Example size, adjust as needed */
+  margin-bottom: 0.5rem; /* Adjust as needed */
 }
 
-.description {
-  margin-bottom: 2rem;
+.subtitle {
+  font-size: 1rem; /* Example size, adjust as needed */
+  margin-bottom: 2rem; /* Adjust as needed */
 }
 
 .form {
+  width: 100%; /* Use full width of the container */
+  max-width: 500px; /* Maximum size of the form */
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 400px;
+  align-items: center; /* Center children horizontally */
 }
 
 .input {
+  width: 100%; /* Full width within the form */
   padding: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1rem; /* Space between the input and the button */
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
 .button {
+  width: 100%; /* Full width within the form */
   padding: 1rem;
-  background-color: blue;
+  background: #0056b3;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 2rem; /* Adjust as needed */
 }
