@@ -1,7 +1,7 @@
-# users/urls.py
+from .views import waitlist_signup
 from django.urls import path
-from .views import CreateUserView
 
 urlpatterns = [
-    path('register/', CreateUserView.as_view(), name='register'),
+    # ... your other url patterns ...
+    path('waitlist/', waitlist_signup, name='waitlist_signup'),
 ]
