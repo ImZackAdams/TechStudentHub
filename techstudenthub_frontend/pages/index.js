@@ -1,65 +1,53 @@
 import { useState } from 'react';
 import fetch from 'isomorphic-unfetch'; // Make sure you have installed this package
-import styles from '../src/app/page.module.css'; // Your styles
+import styles from '../src/app/page.module.css'; // Adjust the path as needed
 
 export default function SignUp() {
   // State to store the input from the user
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState(''); // Add a state for password
 
   // Function to handle form submission
   const handleSubmit = async (event) => {
-    event.preventDefault(); // Prevents the default form submit action
+    event.preventDefault();
 
+    // Here, add the API call to the backend endpoint responsible for handling waitlist sign-ups
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/users/register/', {
+      const response = await fetch('http://127.0.0.1:8000/api/waitlist/', { // Change the endpoint as needed
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          username: email, // Assuming the username is the email for simplicity
-          email: email,
-          password: password, // Use the password state here
+          email: email, // Only email is needed for waitlist
         }),
       });
 
-      if (response.status === 201) {
+      if (response.ok) {
         const data = await response.json();
-        console.log('User registered successfully:', data);
-        // Handle success, e.g., redirect to the login page or display a success message
+        console.log('Added to waitlist successfully:', data);
+        // You could clear the form or display a success message
       } else {
-        // Handle errors, e.g., display an error message from the response
         const errorData = await response.json();
-        console.error('Registration failed:', errorData);
-        // Display an error message to the user here
+        console.error('Failed to join waitlist:', errorData);
+        // Display error messages to the user
       }
     } catch (error) {
-      console.error('An unexpected error occurred:', error);
-      // Display an error message to the user here
+      console.error('An error occurred:', error);
+      // Display an error message to the user
     }
   };
 
-  // The form JSX
+  // The JSX for the form, using styles from your CSS module
   return (
     <main className={styles.main}>
       <h1 className={styles.title}>Join Our Waitlist</h1>
-      <p className={styles.description}>Sign up now to get early access.</p>
-
+      <p className={styles.description}>Sign up to be the first to know when we launch.</p>
       <form onSubmit={handleSubmit} className={styles.form}>
         <input
           type="email"
           placeholder="Enter your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className={styles.input}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Enter your password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
           className={styles.input}
           required
         />
