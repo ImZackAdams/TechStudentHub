@@ -1,7 +1,9 @@
-from .views import waitlist_signup
+# users/urls.py
+
 from django.urls import path
+from .views import WaitlistView
 
 urlpatterns = [
-    # ... your other url patterns ...
-    path('waitlist/', waitlist_signup, name='waitlist_signup'),
+    # ... other url patterns
+    path('waitlist/', WaitlistView.as_view(), name='waitlist'),
 ]

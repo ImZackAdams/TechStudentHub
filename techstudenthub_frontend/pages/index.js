@@ -12,13 +12,15 @@ export default function SignUp() {
 
     // Here, add the API call to the backend endpoint responsible for handling waitlist sign-ups
     try {
-     const response = await fetch('http://127.0.0.1:8000/api/users/waitlist/', {
+  // React component fetch call
+const response = await fetch('http://127.0.0.1:8000/api/users/waitlist/', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
   },
   body: JSON.stringify({ email: email }),
 });
+
 
       if (response.ok) {
         const data = await response.json();
